@@ -20,21 +20,28 @@
             width: 150px;
             margin: 0 8px;
         }
+        .pr-3{
+            font-size: 25px;
+        }
     </style>
 </head>
 <body>
 <h1>{{msg}}</h1>
 <form name="frm" action="/automation/api_test/update/commoninfo/" method="post">
-    <span>
+    <span class="pr-3">
+        <a style="color: dodgerblue">
         环境信息：
+        </a>
     </span>
     <div class="flex">
         <div class="pr-1">测试端口<input type="text" name="host_name" value="{{host_name}}"></div>
         <div class="pr-1">测试环境<input type="text" name="host_port" value="{{host_port}}"></div>
         <div class="pr-1">使用数据库<input type="text" name="host_mysql" value="{{host_mysql}}"></div>
     </div>
-    <span>
+    <span class="pr-3">
+        <a style="color: dodgerblue">
         商品信息：
+        </a>
     </span>
     <div class="flex">
         <div class="pr-1">订单中商品ID_1<input type="text" name="sale_id_1" value="{{sale_id_1}}"></div>
@@ -44,8 +51,10 @@
         <div class="pr-1">商品零售单价<input type="text" name="base_price" value="{{base_price}}"></div>
     </div>
     <div>
-    <span>
+    <span class="pr-3">
+        <a style="color: dodgerblue">
         账户信息：
+        </a>
     </span>
         {% for value in  values%}
         <div class="flex">
@@ -57,8 +66,10 @@
             <div class="pr-2">用户所在公司ID<input type="text" name="user_company_id" value="{{value.user_company_id}}"></div>
         </div>
         {% endfor %}
-    <span>
+    <span class="pr-3">
+        <a style="color: dodgerblue">
         付款方式：
+        </a>
     </span>
     {% for payrate in  payrates%}
         <div class="flex">
@@ -72,9 +83,11 @@
             <div class="lable flex">质保金比例<input  class="input" type="text" name="warrantyPercent" value="{{payrate.warrantyPercent}}"></div>
         </div>
         {% endfor %}
-    <div><input type="submit" value="更新基础数据" ></div>
+    <div>
+        <input type="submit" value="更新基础数据" style="color:darkred">
+    </div>
 </form>
-<div><a href="/automation/api_test/show/{{ host_name }}">直接进入</a></div>
-<div><a href="/automation/">重新选择环境</a></div>
+<div><a href="/automation/api_test/show/{{ host_name }} "style="color:blueviolet">直接进入</a></div>
+<div><a href="/automation/"style="color:yellowgreen">重新选择环境</a></div>
 </body>
 </html>
